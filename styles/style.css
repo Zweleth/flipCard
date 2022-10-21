@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width:250px;
+    height: 350px; 
+}
+
+.card {
+    position: relative;
+    width:250px;
+    height: 350px;
+    border: none;
+    
+    transition: transform 0.8s;
+    transform-style: preserve-3d ;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid aqua;
+    border-radius: 10px; 
+    backface-visibility: hidden;
+}
+
+.front {
+    background-image: url(https://i.postimg.cc/Njs3RjKx/1600x2560-1409195-marshmello-music-hd-4k-mask.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.back {
+    background-image: url(https://i.postimg.cc/nz42dq59/1600x2560-1403130-marshmello-music-hd-4k-mask.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
+
+}
+
+.container:hover > .card {
+    transform: rotateY(180deg);
+}
